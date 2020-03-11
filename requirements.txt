@@ -1,0 +1,5 @@
+tweepy
+simplejson
+numpy
+opencv-python
+urllib3
