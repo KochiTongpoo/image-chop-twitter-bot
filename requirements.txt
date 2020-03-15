@@ -1,6 +1,7 @@
+bottle==0.12.9
 tweepy
 simplejson
 numpy
 opencv-python
 urllib3
-bottle
+
