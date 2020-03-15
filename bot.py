@@ -11,11 +11,15 @@ import urllib.request
 
 #その他モジュール
 import random
+import os
 
 #----------------------------------------------#
 
 #先ほど取得した各種キーを代入する
-
+CK = os.environ["CONSUMER_KEY"]
+CS = os.environ["CONSUMER_SECRET"]
+AT = os.environ["ACCESS_TOKEN_KEY"]
+AS = os.environ["ACCESS_TOKEN_SECRET"]
 
 #Twitterオブジェクトの生成
 auth = tweepy.OAuthHandler(CK, CS)
