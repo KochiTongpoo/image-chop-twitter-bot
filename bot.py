@@ -15,10 +15,7 @@ import random
 #----------------------------------------------#
 
 #先ほど取得した各種キーを代入する
-CK = 'Hx9vZGxW48a60PgDzzSLJC0K5'
-CS = '6F7E1rBjJyU1i3vP478ykL9zaPh0qgBFFv8Gzztx9PPMFniJZi'
-AT = '1190460204044800001-jr3pU73ZfCrHzQQl3qNurD3jR3M6KK'
-AS = '6IA7zvasJpGVs1oIkrkIQX8HfMyb5gbyQugS3pcUscxih'
+
 
 #Twitterオブジェクトの生成
 auth = tweepy.OAuthHandler(CK, CS)
