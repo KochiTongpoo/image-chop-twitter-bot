@@ -3,3 +3,4 @@ simplejson
 numpy
 opencv-python
 urllib3
+bottle
