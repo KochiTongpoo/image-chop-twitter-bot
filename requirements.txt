@@ -1,9 +1,4 @@
 bottle
-future
-oauthlib
-python-twitter
-requests
-requests-oauthlib
 tweepy
 simplejson
 numpy
