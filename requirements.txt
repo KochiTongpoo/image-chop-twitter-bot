@@ -1,7 +1,11 @@
-bottle==0.12.9
+bottle
+future
+oauthlib
+python-twitter
+requests
+requests-oauthlib
 tweepy
 simplejson
 numpy
 opencv-python
 urllib3
-
