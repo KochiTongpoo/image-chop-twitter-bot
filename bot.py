@@ -89,5 +89,6 @@ class myStreamListener(tweepy.StreamListener):
 stream = tweepy.Stream(auth = api.auth, listener = myStreamListener(), secure = True, timeout = None)
 
 #ユーザーストリーミングを開始
-stream.userstream()
-stream.filter(track=['@Kochi_tongpoo'])
+stream.userstream()　#userstreamは2018年6月頃に廃止されてる？
+#api.home.timeline()
+stream.filter(track=['@Kochi_tongpoo']) #userstreamではなく、これが機能してる？（ただし鍵アカ非対応）
