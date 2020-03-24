@@ -90,4 +90,4 @@ stream = tweepy.Stream(auth = api.auth, listener = myStreamListener(), secure = 
 
 #ユーザーストリーミングを開始
 stream.userstream()
-#stream.filter(track=['@Kochi_tongpoo'])
+stream.filter(track=['@Kochi_tongpoo'])
