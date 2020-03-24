@@ -30,34 +30,27 @@ api = tweepy.API(auth_handler=auth)
 #自身のボットネームの取得
 bot_name = api.me().screen_name
 
-#h@@@ttps://www.take01x.okinawa/archives/151
 class myStreamListener(tweepy.StreamListener):
-    print('test999')
-
-    def on_status(self, status):
-        print(status.text)
+    
+    #def on_status(self, status):
+    #    print(status.text)
 
     #データが来たとき
     def on_data(self, data):
-        print('データ来た！')
-        FLAG = 1;
+
         if data.startswith("{"):
-            print('処理するね！')
+  
             #データをパイソンの辞書に変換
             data = simplejson.loads(data)
             #データを取得したときの動作
             if "text" in data:
-                print('---処理中---')
-                #ボットへのリプライにキーワードが含まれていたとき、挨拶を返す
+                #ボットへのリプライにキーワードが含まれていたとき、画像を返す
                 if data['in_reply_to_screen_name'] == bot_name and "chop" in data['text']:
-                    print('返信したよ！')
 
                     #処理①：画像の保存(urllib)
                     url = data['entities']['media'][0]['media_url']
                     savename = "download_twitter.jpg"
-
-                    print(url)
-
+                    
                     urllib.request.urlretrieve(url, savename)
 
                     #処理②：画像のリサイズ(opencv)
@@ -72,9 +65,6 @@ class myStreamListener(tweepy.StreamListener):
 
                     roi1 = img[y1:y1+h, x1:x1+w]
                     roi2 = img[y2:y2+h, x2:x2+w]
-
-
-                    #cv2.imshow('test', hsv)       #imgをtestウィンドウで表示
 
                     cv2.imwrite("out1.jpg", roi1)
 
@@ -100,5 +90,4 @@ stream = tweepy.Stream(auth = api.auth, listener = myStreamListener(), secure = 
 
 #ユーザーストリーミングを開始
 stream.userstream()
-print('実行！')
 stream.filter(track=['@Kochi_tongpoo'])
